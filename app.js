@@ -38,6 +38,7 @@ var holdUpStereoDiv = document.createElement('div');
 holdUpStereoDiv.className = "holdUpStereo";
 
 var holdUpStereo = new THREE.CSS3DObject(holdUpStereoDiv);
+userLocation.add(holdUpStereo);
 //holdUpStereo.scale.set(2, 2, 2);
 
 // the width and height is used to align things.
@@ -106,7 +107,7 @@ app.vuforia.isAvailable().then(function (available) {
                         //Target has been found
                         console.log("Target Found"); 
                         
-                        ARProjectionObject.add(holdUpStereo);
+                        //ARProjectionObject.add(holdUpStereo);
                         ARProjectionObject.add(cssObjectPlaylist);
                         holdUpStereo.position.z = 0;
                         cssObjectPlaylist.position.z = 1;
@@ -116,7 +117,7 @@ app.vuforia.isAvailable().then(function (available) {
                         //Target is lost
                         console.log("Target Lost");
                         
-                        ARProjectionObject.remove(holdUpStereo);
+                        //ARProjectionObject.remove(holdUpStereo);
                         ARProjectionObject.remove(cssObjectPlaylist);
                     } 
                 });
