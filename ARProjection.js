@@ -4,8 +4,11 @@ function ARProjection(leftArrow, rightArrow, projectionDiv) {
     this.currentView = null;
     this.views = [];
     this.startX = null;
+    this.startY = null;
     this.movingX = null;
+    this.movingY = null;
     this.endX = null;
+    this.endY = null;
     this.xDifference = null;
     this.moveDirection = null;
     
@@ -14,6 +17,8 @@ function ARProjection(leftArrow, rightArrow, projectionDiv) {
     rightArrow.addEventListener('touchstart', this.rightArrowClicked.bind(this));
     
     projectionDiv.addEventListener('touchstart', this.projectionDivClicked.bind(this));
+    projectionDiv.addEventListener('touchmove', this.projectionDivMoved.bind(this));
+    projectionDiv.addEventListener('touchend', this.projectionLetGo.bing(this));
 
 }
 
@@ -23,8 +28,28 @@ ARProjection.prototype.addView = function(view) {
 }
 ARProjection.prototype.projectionDivClicked = function(event) {
     //pause/play whichever element is visible
-        this.currentView.handleAudio();
+        if(targetTouches.length == 1) {
+            this.currentView.handleAudio();
+        } else if (targetTouches.length == 2) {
+            //handle movement of CSS object
+            event.preventDefault();
+            this.startX = event.touches[0].clientX;
+            this.startY = event.touches[0].clientY;
+            
+        }
 }
+
+ARProjection.prototype.projectionDivMoved = function(event) {
+    //Follow projection move 
+        cssObjectPlaylist.x = event.touches[0].clientX;
+        cssObjectPlaylist.y = event.touches[0].clientY;
+}
+ARProjection.prototype.projectionLetGo = function(event) {
+    //Snap back to position
+        cssObjectPlaylist.x = this.startX;
+        cssObjectPlaylist.y = this.startY;
+}
+
 ARProjection.prototype.rightArrowClicked = function(event) {
     
     this.moveDirection = "right"; 
