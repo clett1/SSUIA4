@@ -30,6 +30,15 @@ app.view.element.appendChild(hud.domElement);
 // more similar to what is used in the geospatial industry
 app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
 
+/*
+    stereo: html/css object that contains animation event for music, behind the projection object put into the screen
+    
+*/
+var stereo = document.createElement('div');
+var stereo.className = "stereo";
+
+var stereoObject = new THREE.CSS3DSprite(stereo);
+
 
 // the width and height is used to align things.
 
@@ -95,16 +104,19 @@ app.vuforia.isAvailable().then(function (available) {
                     
                     if(targetPose.poseStatus & Argon.PoseStatus.FOUND) {
                         //Target has been found
-                        console.log("Target Found");  
+                        console.log("Target Found"); 
                         
+                        ARProjectionObject.add(stereoObject);
                         ARProjectionObject.add(cssObjectPlaylist);
-                        cssObjectPlaylist.position.z = 0;
+                        stereoObject.position.z = 0;
+                        cssObjectPlaylist.position.z = 1;
                       
                     
                     } else if(targetPose.poseStatus & Argon.PoseStatus.LOST) {  
                         //Target is lost
                         console.log("Target Lost");
                         
+                        ARProjectionObject.remove(stereoObject);
                         ARProjectionObject.remove(cssObjectPlaylist);
                     } 
                 });
