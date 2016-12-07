@@ -34,10 +34,10 @@ app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
     stereo: html/css object that contains animation event for music, behind the projection object put into the screen
     
 */
-var holdUpStereoDiv = document.createElement('div');
-holdUpStereoDiv.className = "holdUpStereo";
+var holdUpStereoDiv = document.getElementById('holdUpStereo');
+//holdUpStereoDiv.className = "holdUpStereo";
 
-var holdUpStereo = new THREE.CSS3DObject(holdUpStereoDiv);
+//var holdUpStereo = new THREE.CSS3DObject(holdUpStereoDiv);
 //userLocation.add(holdUpStereo);
 //holdUpStereo.scale.set(2, 2, 2);
 
