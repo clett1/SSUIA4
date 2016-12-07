@@ -192,7 +192,7 @@ allElements.appendChild(arrowContainer);
 
 //Create new cssObject Div
 var cssObjectPlaylist = new THREE.CSS3DSprite(allElements);
-cssObjectPlaylist.set.scale(2, 2, 2);
+cssObjectPlaylist.scale.set(2, 2, 2);
 
 //Create new AR Projection
 var projection = new ARProjection(leftArrow, rightArrow, projectionDiv);
