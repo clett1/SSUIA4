@@ -30,16 +30,6 @@ app.view.element.appendChild(hud.domElement);
 // more similar to what is used in the geospatial industry
 app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
 
-/*
-    stereo: html/css object that contains animation event for music, behind the projection object put into the screen
-    
-*/
-var holdUpStereoDiv = document.getElementById('holdUpStereo');
-//holdUpStereoDiv.className = "holdUpStereo";
-
-//var holdUpStereo = new THREE.CSS3DObject(holdUpStereoDiv);
-//userLocation.add(holdUpStereo);
-//holdUpStereo.scale.set(2, 2, 2);
 
 // the width and height is used to align things.
 
