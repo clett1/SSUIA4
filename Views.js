@@ -83,11 +83,13 @@ View.prototype.handleAudio = function() {
         console.log("This element has no audio file");   
     }else if(this.playState == "paused") {
         //play track
+        holdUpStereo.classList.add('active');
         this.track.play();
         this.updatePlayState();
         //change button state
     } else {
         console.log("pause track");
+        holdUpStereo.classList.add('remove');
         this.track.pause();
         this.updatePauseState();
         //change button state
