@@ -1,33 +1,164 @@
-.stereo {
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.holdUpStereo {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 120px;
     height: 120px;
-    background-color: #FF6200;
-    border: 30px solid #FF7F2F;
+    background-color: orange;
+    border: 30px solid darkorange;
     position: relative;
+    opacity: .5;
     border-radius: 50%;
+    animation-duration: 10s;
 }
 
-.stereo:before, .stereo:after{
+
+.holdUpStereo:before, .holdUpStereo:after{
     content: "";
-    background-color: #FD995A;
-    width: 140%;
+    background-color: orange;
+    width: 120px;
+    height: 120px;
     position: absolute;
-    height: 140%;
-    opacity: .50;
-    border-radius: 50%;
-    border: 10px solid #FD995A;
-
+    opacity: .60;
+    border-radius: 100%;
 
 }
 
-.stereo:after {
-    width: 180%;
-    height: 180%;
-    opacity: .15;
-    background-color: #FF6200;    
-    border: 20px solid orange;
+.holdUpStereo:after {
+    opacity: .25;
+    background-color: darkorange;  
     
 }
+
+@keyframes holdUpStereo-active {
+    0% {
+        transform: scale(1.25);
+        -webkit-transform: scale(1.25);
+        border: 30px solid darkorange;
+
+    } 25% {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        border: 10px solid darkorange;
+
+    }
+    50% {
+        transform: scale(1.25);
+        -webkit-transform: scale(1.25); 
+        border: 30px solid darkorange;
+
+    }
+    75% {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        border: 10px solid darkorange;
+    }
+    100% {
+        transform: scale(1.3);
+        -webkit-transform: scale(1.3);
+        border: 30px solid darkorange;
+    }
+}
+
+@keyframes holdUpStereo-before {
+    0% {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        border: 30px solid darkorange;
+        border: 10px solid darkorange;
+
+
+    } 15% {
+        transform: scale(1.7);
+        -webkit-transform: scale(1.7);
+        border: 10px solid darkorange;
+
+    }
+    50% {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5); 
+        border: 30px solid darkorange;
+
+    }
+    75% {
+        transform: scale(1.75);
+        -webkit-transform: scale(1.75);
+        border: 10px solid darkorange;
+    }
+    100% {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        border: 30px solid #FF7F2F;
+    }
+}
+
+@keyframes holdUpStereo-after {
+    0% {
+        transform: scale(2.5);
+        -webkit-transform: scale(2.5);
+                border: 50px solid orange;
+    } 33% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        border: 40px solid darkorange;
+
+    }
+    66% {
+        transform: scale(2.5);
+        -webkit-transform: scale(2.5); 
+        border: 50px solid darkorange;
+
+    }
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        border: 40px solid darkorange;
+    }
+}
+.holdUpStereo.active {
+    animation-duration: 2.3s;
+    -webkit-animation-duration: 2.3s;
+    animation-name: holdUpStereo-active;
+    -webkit-animation-name: holdUpStereo-active;
+   animation-iteration-count: 110;
+    -webkit-animation-iteration-count: 110;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    animation-timing-function: ease-in-out;    
+    -webkit-animation-timing-function: ease-in-out;
+
+}
+
+
+.holdUpStereo.active::before{
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-name: holdUpStereo-active;
+    -webkit-animation-name: holdUpStereo-active;
+   animation-iteration-count: 110;
+    -webkit-animation-iteration-count: 110;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    animation-timing-function: ease-in-out;    
+    -webkit-animation-timing-function: ease-in-out;
+
+}
+
+.holdUpStereo.active::after{
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-name: holdUpStereo-active;
+    -webkit-animation-name: holdUpStereo-active;
+   animation-iteration-count: 220;
+    -webkit-animation-iteration-count: 220;
+    animation-timing-function: ease-in-out;    
+    -webkit-animation-timing-function: ease-in-out;
+}
+
