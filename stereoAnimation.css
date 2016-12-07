@@ -1,1 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.stereo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: #FF6200;
+    border: 30px solid #FF7F2F;
+    position: relative;
+    border-radius: 50%;
+}
+
+.stereo:before, .stereo:after{
+    content: "";
+    background-color: #FD995A;
+    width: 140%;
+    position: absolute;
+    height: 140%;
+    opacity: .50;
+    border-radius: 50%;
+    border: 10px solid #FD995A;
+
+
+}
+
+.stereo:after {
+    width: 180%;
+    height: 180%;
+    opacity: .15;
+    background-color: #FF6200;    
+    border: 20px solid orange;
+    
+}
