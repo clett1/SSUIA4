@@ -106,9 +106,9 @@ app.vuforia.isAvailable().then(function (available) {
                         //Target has been found
                         console.log("Target Found"); 
                         
-                        //ARProjectionObject.add(stereoObject);
+                        ARProjectionObject.add(stereoObject);
                         ARProjectionObject.add(cssObjectPlaylist);
-                        //stereoObject.position.z = 0;
+                        stereoObject.position.z = 0;
                         cssObjectPlaylist.position.z = 1;
                       
                     
@@ -116,7 +116,7 @@ app.vuforia.isAvailable().then(function (available) {
                         //Target is lost
                         console.log("Target Lost");
                         
-                        //ARProjectionObject.remove(stereoObject);
+                        ARProjectionObject.remove(stereoObject);
                         ARProjectionObject.remove(cssObjectPlaylist);
                     } 
                 });
