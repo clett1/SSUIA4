@@ -28,9 +28,9 @@ ARProjection.prototype.addView = function(view) {
 }
 ARProjection.prototype.projectionDivClicked = function(event) {
     //pause/play whichever element is visible
-        if(targetTouches.length == 1) {
+        if(event.targetTouches.length == 1) {
             this.currentView.handleAudio();
-        } else if (targetTouches.length == 2) {
+        } else if (event.targetTouches.length == 2) {
             //handle movement of CSS object
             event.preventDefault();
             this.startX = event.touches[0].clientX;
