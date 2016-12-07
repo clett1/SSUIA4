@@ -18,7 +18,7 @@ function ARProjection(leftArrow, rightArrow, projectionDiv) {
     
     projectionDiv.addEventListener('touchstart', this.projectionDivClicked.bind(this));
     projectionDiv.addEventListener('touchmove', this.projectionDivMoved.bind(this));
-    projectionDiv.addEventListener('touchend', this.projectionLetGo.bing(this));
+    projectionDiv.addEventListener('touchend', this.projectionLetGo.bind(this));
 
 }
 
