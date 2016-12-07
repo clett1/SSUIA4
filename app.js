@@ -37,7 +37,7 @@ app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
 var holdUpStereoDiv = document.createElement('div');
 holdUpStereoDiv.className = "holdUpStereo";
 
-var holdUpStereo = new THREE.CSS3DSprite(holdUpStereoDiv);
+var holdUpStereo = new THREE.CSS3DObject(holdUpStereoDiv);
 //holdUpStereo.scale.set(2, 2, 2);
 
 // the width and height is used to align things.
