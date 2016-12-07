@@ -109,6 +109,7 @@ app.vuforia.isAvailable().then(function (available) {
                         ARProjectionObject.add(holdUpStereo);
                         //ARProjectionObject.add(cssObjectPlaylist);
                         holdUpStereo.position.z = 0;
+                        console.log(holdUpStereo);
                         //cssObjectPlaylist.position.z = 1;
                       
                     
