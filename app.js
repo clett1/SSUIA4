@@ -34,10 +34,10 @@ app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
     stereo: html/css object that contains animation event for music, behind the projection object put into the screen
     
 */
-var stereo = document.createElement('div');
-stereo.className = "stereo";
+var holdUpStereo = document.createElement('div');
+holdUpstereo.className = "holdUpStereo";
 
-var stereoObject = new THREE.CSS3DSprite(stereo);
+var stereoObject = new THREE.CSS3DSprite(holdUpStereo);
 
 
 // the width and height is used to align things.
@@ -106,9 +106,9 @@ app.vuforia.isAvailable().then(function (available) {
                         //Target has been found
                         console.log("Target Found"); 
                         
-                        ARProjectionObject.add(stereoObject);
+                        ARProjectionObject.add(holdUpStereo);
                         ARProjectionObject.add(cssObjectPlaylist);
-                        stereoObject.position.z = 0;
+                        holdUpStereo.position.z = 0;
                         cssObjectPlaylist.position.z = 1;
                       
                     
@@ -116,7 +116,7 @@ app.vuforia.isAvailable().then(function (available) {
                         //Target is lost
                         console.log("Target Lost");
                         
-                        ARProjectionObject.remove(stereoObject);
+                        ARProjectionObject.remove(holdUpStereo);
                         ARProjectionObject.remove(cssObjectPlaylist);
                     } 
                 });
