@@ -38,7 +38,7 @@ var holdUpStereoDiv = document.createElement('div');
 holdUpStereoDiv.className = "holdUpStereo";
 
 var holdUpStereo = new THREE.CSS3DObject(holdUpStereoDiv);
-userLocation.add(holdUpStereo);
+//userLocation.add(holdUpStereo);
 //holdUpStereo.scale.set(2, 2, 2);
 
 // the width and height is used to align things.
