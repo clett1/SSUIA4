@@ -17,9 +17,7 @@ function ARProjection(leftArrow, rightArrow, projectionDiv) {
     rightArrow.addEventListener('touchstart', this.rightArrowClicked.bind(this));
     
     projectionDiv.addEventListener('touchstart', this.projectionDivClicked.bind(this));
-    projectionDiv.addEventListener('touchmove', this.projectionDivMoved.bind(this));
-    projectionDiv.addEventListener('touchend', this.projectionLetGo.bind(this));
-
+  
 }
 
 ARProjection.prototype.addView = function(view) {
@@ -28,26 +26,8 @@ ARProjection.prototype.addView = function(view) {
 }
 ARProjection.prototype.projectionDivClicked = function(event) {
     //pause/play whichever element is visible
-        if(event.targetTouches.length == 1) {
             this.currentView.handleAudio();
-        } else if (event.targetTouches.length == 2) {
-            //handle movement of CSS object
-            event.preventDefault();
-            this.startX = event.touches[0].clientX;
-            this.startY = event.touches[0].clientY;
-            
-        }
-}
-
-ARProjection.prototype.projectionDivMoved = function(event) {
-    //Follow projection move 
-        cssObjectPlaylist.x = event.touches[0].clientX;
-        cssObjectPlaylist.y = event.touches[0].clientY;
-}
-ARProjection.prototype.projectionLetGo = function(event) {
-    //Snap back to position
-        cssObjectPlaylist.x = this.startX;
-        cssObjectPlaylist.y = this.startY;
+      
 }
 
 ARProjection.prototype.rightArrowClicked = function(event) {
