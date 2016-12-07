@@ -35,7 +35,7 @@ app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
     
 */
 var stereo = document.createElement('div');
-var stereo.className = "stereo";
+stereo.className = "stereo";
 
 var stereoObject = new THREE.CSS3DSprite(stereo);
 
