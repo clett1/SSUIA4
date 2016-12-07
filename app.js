@@ -107,10 +107,9 @@ app.vuforia.isAvailable().then(function (available) {
                         console.log("Target Found"); 
                         
                         ARProjectionObject.add(holdUpStereo);
-                        //ARProjectionObject.add(cssObjectPlaylist);
+                        ARProjectionObject.add(cssObjectPlaylist);
                         holdUpStereo.position.z = 0;
-                        console.log(holdUpStereo);
-                        //cssObjectPlaylist.position.z = 1;
+                        cssObjectPlaylist.position.z = 1;
                       
                     
                     } else if(targetPose.poseStatus & Argon.PoseStatus.LOST) {  
@@ -118,7 +117,7 @@ app.vuforia.isAvailable().then(function (available) {
                         console.log("Target Lost");
                         
                         ARProjectionObject.remove(holdUpStereo);
-                        //ARProjectionObject.remove(cssObjectPlaylist);
+                        ARProjectionObject.remove(cssObjectPlaylist);
                     } 
                 });
             }).catch(function(err) {
