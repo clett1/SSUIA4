@@ -35,7 +35,7 @@ app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
     
 */
 var holdUpStereoDiv = document.createElement('div');
-holdUpstereoDiv.className = "holdUpStereo";
+holdUpStereoDiv.className = "holdUpStereo";
 
 var holdUpStereo = new THREE.CSS3DSprite(holdUpStereoDiv);
 
