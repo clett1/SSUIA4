@@ -99,8 +99,7 @@ app.vuforia.isAvailable().then(function (available) {
                         
                         //ARProjectionObject.add(holdUpStereo);
                         ARProjectionObject.add(cssObjectPlaylist);
-                        holdUpStereo.position.z = 0;
-                        cssObjectPlaylist.position.z = 1;
+                        cssObjectPlaylist.position.z = 0;
                       
                     
                     } else if(targetPose.poseStatus & Argon.PoseStatus.LOST) {  
